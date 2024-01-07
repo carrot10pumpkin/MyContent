@@ -37,7 +37,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 This was a great project for me to exercise my skills at creating responsive layouts!
 
 
-To see how you can add code snippets, see below:
+Some of my code!
 
 ```html
  <div class="container">
