@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <div>
+        <h1>Hello! this is home page</h1>
+        <h3>Serving static HTML file using Node.js</h3>
+        <h3 id="running"></h3>
+    </div>
+    <h2>Variable</h2>
+    <p><%= tagline %></p>
+    <ul>
+        <% Items.forEach(function(entry) { %>
+          <li>
+            <strong><%= entry.fields.productName %></strong>
+            representing <%= entry.fields%>
+
+          
+          </li>
+        <% }); %>
+      </ul>
+
+
+    <ul>
+      <% mascots.forEach(function(mascot) { %>
+        <li>
+          <strong><%= mascot.name %></strong>
+          representing <%= mascot.organization %>,
+          born <%= mascot.birth_year %>
+        </li>
+      <% }); %>
+    </ul>
+  <pre> 
+
+    <%- JSON.stringify(mascots, null, 2) %>
+  </pre>  
+    <%- include('../partials/footer'); %>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+<script src="bundle.js"></script>
+<script src="app.js"></script>
+</html>
