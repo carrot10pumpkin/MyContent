@@ -14,28 +14,52 @@ app.set('view engine', 'ejs');
 var Items = []
 
 
+
+
 var client = contentful.createClient({
     space: process.env.SPACE_ID  ,
-    accessToken: process.env.ACCESS_TOKEN,
+    accessToken: process.env.ACCESS_TOKEN
   });
 
 
 
 client.getEntries().then(function (entries) {
-  
-  entries.items.forEach(function (entry) {
 
+  entries.items.forEach(function (entry) {
+   
+   
     if (entry.fields.productName) {
       console.log(entry.fields.productName);
+    console.log(entry.fields.productDescription)
       Items.push(entry)
     }
+
+   
   });
+
+
 });
 
 
 
+// const asset = client.getAsset('7DON9IwIngRdBOX7Zh3Ubw')
+//   .then((asset) => console.log(asset.fields.file.url)
 
 
+
+// )
+
+client
+  .getAssets()
+  .then(function (assets) {
+    assets.items.map(function (asset) {
+   
+     if (asset.fields.file.url){
+      console.log('https:'+ asset.fields.file.url) 
+      Items.push(asset)
+     }
+    });
+  })
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', async(req, res) => {
