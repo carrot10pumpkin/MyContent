@@ -15,13 +15,13 @@
           <li>
             <strong><%= entry.fields.productName %></strong>
      
-            representing    
+            representing     <%= entry.fields.productDescription %>,
           
           </li>
           
         <% }); %>
       </ul>
-
+      <div id="images"></div>
 
     <ul>
       <% mascots.forEach(function(mascot) { %>
@@ -42,6 +42,7 @@
   </pre>  
     <%- include('../partials/footer'); %>
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
 <script src="bundle.js"></script>
 <script src="app.js"></script>

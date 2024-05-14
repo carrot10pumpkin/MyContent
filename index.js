@@ -72,10 +72,14 @@ app.get('/', async(req, res) => {
    ...Items
   ];
   var tagline = "No programming concept is complete without a cute animal mascot.";
+  
     res.render('pages/home', {
       Items,
     mascots: mascots,
     tagline: tagline
+    
+
+    
   });
    
 });
